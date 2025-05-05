@@ -3,7 +3,7 @@
 
     <div>
         <label for="searchPhrase">Hitta kurs:</label>
-        <input type="text" id="searchPhrase" [(ngModel)]="searchPhrase" (input)="findCourse()">
+        <input type="text" id="searchPhrase" [(ngModel)]="searchPhrase" (input)="findCourse()" placeholder="Skriv Kurskod/Kursnamn">
     </div>
     <table>
         <thead>
@@ -15,7 +15,7 @@
         </thead>
         <tbody>
             <tr *ngFor="let course of filteredCourses">
-                <td><a [href]="course.syllabus" target="_blank" class="course-plan">{{ course.code }}</a></td>
+                <td><a [href]="course.syllabus" target="_blank" class="course-plan" title="Öppna kursplan i annan flik">{{ course.code }}</a></td>
                 <td>{{ course.coursename }}</td>
                 <td>{{ course.progression }}</td>
             </tr>

@@ -9,7 +9,9 @@ table, div, h2 {
     width: 80%;
     margin: 0 auto;
 }
-
+table {
+    border: 1px solid black;
+}
 #searchPhrase {
     width: 40%;
     margin: 2%;
