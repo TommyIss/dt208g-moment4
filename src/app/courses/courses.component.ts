@@ -17,7 +17,8 @@ export class CoursesComponent {
   searchPhrase: string = '';
   codeOrder: string = 'desc';
   nameOrder: string = 'desc';
-  
+  codeArrow: string = 'fas fa-caret-up';
+  nameArrow: string = 'fas fa-caret-up';
   
   constructor(private coursesService: CoursesService) {}
 
@@ -41,11 +42,13 @@ export class CoursesComponent {
   sortByName(): void {
     if(this.nameOrder === 'desc') {
       this.nameOrder = 'asc';
+      this.nameArrow = 'fas fa-caret-down';
       this.filteredCourses.sort((a, b) => 
         (a.coursename > b.coursename) ? 1 : -1
       );
     } else if(this.nameOrder === 'asc') {
       this.nameOrder = 'desc';
+      this.nameArrow = 'fas fa-caret-up';
       this.filteredCourses.sort((a, b) => 
       (b.coursename > a.coursename) ? 1 : -1
       );
@@ -56,11 +59,13 @@ export class CoursesComponent {
   sortByCode(): void {
     if(this.codeOrder === 'desc') {
       this.codeOrder = 'asc';
+      this.codeArrow = 'fas fa-caret-down';
       this.filteredCourses.sort((a, b) => 
       (a.code > b.code) ? 1 : -1
       );
     } else if(this.codeOrder === 'asc') {
       this.codeOrder = 'desc';
+      this.codeArrow = 'fas fa-caret-up';
       this.filteredCourses.sort((a, b) => 
       (b.code > a.code) ? 1 : -1
       );
