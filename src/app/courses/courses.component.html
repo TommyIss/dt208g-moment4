@@ -1,1 +1,22 @@
-<p>courses works!</p>
+<h2>Kurser för Webbutvecklings program</h2>
+
+<div>
+    <label for="searchPhrase">Hitta kurs:</label>
+    <input type="text" id="searchPhrase" [(ngModel)]="searchPhrase" (input)="findCourse()">
+</div>
+<table>
+    <thead>
+        <tr>
+            <th data-order="codeOrder" (click)="sortByCode()">Kurskod</th>
+            <th data-order="nameOrder" (click)="sortByName()">Kursnamn</th>
+            <th>Progression</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let course of filteredCourses">
+            <td><a [href]="course.syllabus" target="_blank" class="course-plan">{{ course.code }}</a></td>
+            <td>{{ course.coursename }}</td>
+            <td>{{ course.progression }}</td>
+        </tr>
+    </tbody>
+</table>
